@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@700&display=swap');
+
+body {
+    background: #6190E8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.card {
+    margin-top: 9rem;
+    width: 50rem;
+    height: 27rem;
+    padding: 1rem;
+    margin-left: 35rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+#emaillabel {
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+#exampleInputEmail1 {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+#exampleInputPassword1 {
+    margin-top: 5px;
+}
+
+#plabel {
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.btn-dark {
+    font-weight: 500;
+    margin-top: 1.5rem;
+} 
+
+.btn-success {
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 420px) {
+    .card {
+        margin-top: 0px !important;
+        margin-left: 0px !important;
+        border:none;
+    }
+    
+    body {
+        background: white !important;
+    }
+}
+
+.reg-card {
+    height: 32rem;
+}
