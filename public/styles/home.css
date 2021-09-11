@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.navbar {
+    background: transparent;
+}
+
+/* Brand */
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+    font-size: 2.8rem;
+    margin-left: 5rem;
+    color: #610094 !important;
+}
+
+@media only screen and (max-width: 380px) {
+    .navbar-brand {
+        font-size: 2.8rem;
+        margin-left: 15px !important;
+    }    
+}
+
+.navbar-nav {
+    margin-left: 2.5rem;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    
+}
+
+@media only screen and (max-width: 380px) {
+    .navbar-nav {
+        margin-left: 15px !important;
+        background-color: #F9F9F9;
+    }    
+}
+
+.nav-link {
+    color: #610094 !important;
+}
+
+.nav-item {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.illustration {
+    width: 45%;
+    margin-left: 45rem;
+}
+
+@media only screen and (max-width: 380px) {
+    .illustration {
+        width: 100%;
+        margin-left: 0px !important;
+    }    
+}
