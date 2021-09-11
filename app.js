@@ -19,7 +19,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World!</h1>")
+  res.render("home.ejs");
 })
 
 app.listen(port, () => {

@@ -13,7 +13,7 @@
     color: #610094 !important;
 }
 
-@media only screen and (max-width: 380px) {
+@media (max-width: 420px) {
     .navbar-brand {
         font-size: 2.8rem;
         margin-left: 15px !important;
@@ -28,7 +28,7 @@
     
 }
 
-@media only screen and (max-width: 380px) {
+@media (max-width: 420px) {
     .navbar-nav {
         margin-left: 15px !important;
         background-color: #F9F9F9;
@@ -45,11 +45,11 @@
 }
 
 .illustration {
-    width: 45%;
+    width: 43%;
     margin-left: 45rem;
 }
 
-@media only screen and (max-width: 380px) {
+@media (max-width: 420px) {
     .illustration {
         width: 100%;
         margin-left: 0px !important;
@@ -82,8 +82,8 @@
     width: 6rem;
     border-radius: 30rem;
     position: absolute;
-    margin-left: 6rem;
-    margin-top: 24.5rem;
+    margin-left: 10rem;
+    margin-top: 25rem;
     color: white;
 }
 
@@ -92,14 +92,60 @@
     color: white;
 }
 
-@media only screen and (max-width: 380px) {
+.btn-mh-l {
+    background-color: #72147E !important;
+    font-family: 'Lobster', cursive;
+    font-size: 1.2rem;
+    width: 6.3rem;
+    border-radius: 30rem;
+    position: absolute;
+    margin-left: 18rem;
+    margin-top: 25rem;
+    color: white;
+}
+
+.btn-mh-l:hover {
+    background-color: #AE00FB !important;
+    color: white;
+}
+
+
+@media (max-width: 420px) {
     .tagline {
-        display: none;
-    }
-    .btn-mh {
-        display: none;
+        font-size: 2rem;
+        margin-top: 22rem !important;
+        margin-left: 2.5rem !important;
     }
     .mh {
         display: none;
     }   
+}
+
+.copy {
+    position: absolute;
+    margin-top: 38rem;
+    color:#610094;
+    margin-left: 12rem;
+    font-size: 1.2rem;
+}
+
+
+@media (max-width: 420px) {
+    .btn-mh-l {
+        margin-left: 4rem !important;
+        margin-top: 28rem;
+    }
+
+    .btn-mh {
+        margin-left: 12.5rem !important;
+        margin-top: 28rem;
+    }
+
+    .copy {
+        position: absolute;
+        margin-top: 32rem;
+        color:#610094;
+        margin-left: 7.5rem;
+        font-size: 1rem;
+    }
 }
