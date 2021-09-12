@@ -72,23 +72,28 @@ app.post("/login", (req, res) => {
   });
 })
 
+app.get("/cart", (req, res) => {
+  connection.query('SELECT * FROM menu', function (error, results) {
+    if (!error){
+        res.render('cart', {username: suname, user_id: suid, items: results})
+    }
+  });
+});
+
 var cart_items = [];
-var cart_item_details = [];
+
 app.post("/cart", (req, res) => {
   cart_items = req.body.cart;
-  
+  console.log(cart_items);
   cart_items.map((cart_item) => {
-    connection.query('SELECT * FROM menu WHERE item_id = ?', [cart_item], function (error, results) {
+    connection.query('INSERT INTO cart (user_id, item) VALUES (?, ?)', [suid, cart_item], function (error, results) {
       if (!error){
-        cart_item_details.push(results[0]);
+        console.log("sucess")
       } else {
         console.log(error)
       }
     });
   });
-
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({ data: foundMovies }));
 });
 
 app.listen(port, () => {

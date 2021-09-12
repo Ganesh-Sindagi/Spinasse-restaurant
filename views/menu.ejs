@@ -32,7 +32,7 @@
 
             <ul class="navbar-nav second">
                 <li class="nav-item">
-                  <a href="#cart" class="nav-link active" aria-current="page"><i class="fas fa-shopping-cart"></i></a>
+                  <a onclick="openCart()" class="nav-link active" aria-current="page"><i class="fas fa-shopping-cart"></i></a>
                   
                 </li>
                 <li class="">
@@ -73,6 +73,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh" value=""><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
+                            <p class="card-text" style="font-weight: bold">₹<%= items[i].price %></p>
                             <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
@@ -93,6 +94,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
+                            <p class="card-text" style="font-weight: bold">₹<%= items[i].price %></p>
                             <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
@@ -113,6 +115,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
+                            <p class="card-text" style="font-weight: bold">₹<%= items[i].price %></p>
                             <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
@@ -133,6 +136,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
+                            <p class="card-text" style="font-weight: bold">₹<%= items[i].price %></p>
                             <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
@@ -153,6 +157,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
+                            <p class="card-text" style="font-weight: bold">₹<%= items[i].price %></p>
                             <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
@@ -173,6 +178,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
+                            <p class="card-text" style="font-weight: bold">₹<%= items[i].price %></p>
                             <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
@@ -193,6 +199,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
+                            <p class="card-text" style="font-weight: bold">₹<%= items[i].price %></p>
                             <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
@@ -204,7 +211,7 @@
     </div>
 
     <!-- Cart -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div id="cart" class="cart">
                 <h1 class="rhh">Cart</h1>
@@ -212,7 +219,7 @@
             <p>Total Price: ₹<span id="price">0</span></p>
             
         </div>
-    </div>
+    </div> -->
     
 
     <script src="/scripts/cart.js" async></script>
