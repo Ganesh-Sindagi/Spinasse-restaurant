@@ -60,7 +60,148 @@
 
     
     <!-- Menus -->
+    <div class="container menu-cont">
+        <div class="row">
+            <h1 class="rh">Recommended</h1>
+        </div>
+        <div class="row">
+            <% for (var i = 0; i<items.length; i++) { %>
+                <% if (items[i].category == 1) { %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card menu-card" style="width: 18rem;">
+                            <img src="<%= items[i].img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <p class="card-text"><%= items[i].description %></p>
+                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
 
+        <div class="row">
+            <h1 class="rh">Small Plates</h1>
+        </div>
+        <div class="row">
+            <% for (var i = 0; i<items.length; i++) { %>
+                <% if (items[i].category == 2) { %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card menu-card" style="width: 18rem;">
+                            <img src="<%= items[i].img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <p class="card-text"><%= items[i].description %></p>
+                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="row">
+            <h1 class="rh">Indian Mains</h1>
+        </div>
+        <div class="row">
+            <% for (var i = 0; i<items.length; i++) { %>
+                <% if (items[i].category == 3) { %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card menu-card" style="width: 18rem;">
+                            <img src="<%= items[i].img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <p class="card-text"><%= items[i].description %></p>
+                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="row">
+            <h1 class="rh">Rice & Biriyani</h1>
+        </div>
+        <div class="row">
+            <% for (var i = 0; i<items.length; i++) { %>
+                <% if (items[i].category == 4) { %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card menu-card" style="width: 18rem;">
+                            <img src="<%= items[i].img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <p class="card-text"><%= items[i].description %></p>
+                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="row">
+            <h1 class="rh">Fried Rice & Noodles</h1>
+        </div>
+        <div class="row">
+            <% for (var i = 0; i<items.length; i++) { %>
+                <% if (items[i].category == 5) { %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card menu-card" style="width: 18rem;">
+                            <img src="<%= items[i].img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <p class="card-text"><%= items[i].description %></p>
+                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+        
+        <div class="row">
+            <h1 class="rh">Pizzas & Pastas</h1>
+        </div>
+        <div class="row">
+            <% for (var i = 0; i<items.length; i++) { %>
+                <% if (items[i].category == 6) { %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card menu-card" style="width: 18rem;">
+                            <img src="<%= items[i].img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <p class="card-text"><%= items[i].description %></p>
+                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="row">
+            <h1 class="rh">Desserts</h1>
+        </div>
+        <div class="row">
+            <% for (var i = 0; i<items.length; i++) { %>
+                <% if (items[i].category == 7) { %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card menu-card" style="width: 18rem;">
+                            <img src="<%= items[i].img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <p class="card-text"><%= items[i].description %></p>
+                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+
+    </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://kit.fontawesome.com/b6a0edf9cb.js" crossorigin="anonymous"></script>

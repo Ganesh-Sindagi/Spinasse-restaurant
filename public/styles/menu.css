@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .sticky-top {
     background: white !important;
 }
@@ -23,3 +25,32 @@
     height: 1.8rem;
     padding-left: 8px;
 }
+
+.menu-cont {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom:2rem;
+}
+
+.menu-card {
+    margin-top: 2rem;
+    padding-bottom: 10px;
+}
+
+.btn-add {
+    background-color: #72147E !important;
+    font-size: 1rem;
+    border-radius: 30rem;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #AE00FB !important;
+    color: white;
+}
+
+.rh {
+    margin-top: 2rem;
+    color:#610094;
+    font-weight: bold;
+}
+

@@ -37,15 +37,12 @@ app.post("/register", (req, res) => {
     } else {
         res.render('login')
     }
+  }); 
 });
-    
-
-
-})
 
 app.get("/login", (req, res) => {
   res.render("login");
-})
+});
 
 var suid;
 var suname;
@@ -62,9 +59,11 @@ app.post("/login", (req, res) => {
         if(results[0].password === password) {
             suid = results[0].user_id;
             suname = results[0].name;
-            res.render('menu', {username: suname, user_id: suid})
-            console.log("success");
-            console.log(results[0])
+            connection.query('SELECT * FROM menu', function (error, results) {
+              if (!error){
+                  res.render('menu', {username: suname, user_id: suid, items: results})
+              }
+            });
         } else {
             console.log("password didn't match")
         }
