@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.cart-img {
+    width: 130px;
+    height: 120px;
+    border-radius: 15%;
+}
+
+.table {
+    font-size: 1.5rem;
+    width: 70%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cart-quantity-input {
+    width: 40px;
+}

@@ -72,28 +72,51 @@ app.post("/login", (req, res) => {
   });
 })
 
+var citems = [];
+var citemdetails = [];
+function getItemDetails(citems) {
+  
+  citems.map((item) => {
+    connection.query('SELECT * FROM menu WHERE item_id = ?',[item], function (error, results2) {
+      // console.log("Query Result", results2[0]);
+      citemdetails.push(results2[0]);
+    });
+  })
+
+  // console.log("Print function in array" ,citems);
+  // return citemdetails;
+}
+
+
 app.get("/cart", (req, res) => {
-  connection.query('SELECT * FROM menu', function (error, results) {
-    if (!error){
-        res.render('cart', {username: suname, user_id: suid, items: results})
-    }
-  });
+  // connection.query('SELECT * FROM cart WHERE user_id = ?',[suid], function (error, results) {
+  //   if (!error){
+  //       results.map((result) => {
+  //         // console.log(result)
+  //         citems.push(result.item); 
+  //       });   
+  //   }
+  //   // console.log("Items Array results",citems);
+    
+  // });
+  // console.log("Details Array results",citemdetails);
+  res.render('cart', {username: suname, user_id: suid, items: citemdetails}) 
 });
 
 var cart_items = [];
 
 app.post("/cart", (req, res) => {
   cart_items = req.body.cart;
-  console.log(cart_items);
-  cart_items.map((cart_item) => {
-    connection.query('INSERT INTO cart (user_id, item) VALUES (?, ?)', [suid, cart_item], function (error, results) {
-      if (!error){
-        console.log("sucess")
-      } else {
-        console.log(error)
-      }
-    });
-  });
+  // cart_items.map((cart_item) => {
+  //   connection.query('INSERT INTO cart (user_id, item) VALUES (?, ?)', [suid, cart_item], function (error, results) {
+  //     if (!error){
+  //       // console.log("sucess")
+  //     } else {
+  //       console.log(error)
+  //     }
+  //   });
+  // });
+  getItemDetails(cart_items);
 });
 
 app.listen(port, () => {
