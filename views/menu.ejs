@@ -32,11 +32,11 @@
 
             <ul class="navbar-nav second">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-shopping-cart"></i></a>
+                  <a href="#cart" class="nav-link active" aria-current="page"><i class="fas fa-shopping-cart"></i></a>
                   
                 </li>
                 <li class="">
-                    <p class="ci">0</p>
+                    <p class="ci" id="ci">0</p>
                   </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#"><%= username %></a>
@@ -60,9 +60,9 @@
 
     
     <!-- Menus -->
-    <div class="container menu-cont">
+    <div id="menu" class="container menu-cont">
         <div class="row">
-            <h1 class="rh">Recommended</h1>
+            <h1 class="rhh">Recommended</h1>
         </div>
         <div class="row">
             <% for (var i = 0; i<items.length; i++) { %>
@@ -71,9 +71,9 @@
                         <div class="card menu-card" style="width: 18rem;">
                             <img src="<%= items[i].img %>" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title rh"><%= items[i].title %></h5>
+                            <h5 class="card-title rh" value=""><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
-                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
         </div>
 
         <div class="row">
-            <h1 class="rh">Small Plates</h1>
+            <h1 class="rhh">Small Plates</h1>
         </div>
         <div class="row">
             <% for (var i = 0; i<items.length; i++) { %>
@@ -93,7 +93,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
-                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
         </div>
 
         <div class="row">
-            <h1 class="rh">Indian Mains</h1>
+            <h1 class="rhh">Indian Mains</h1>
         </div>
         <div class="row">
             <% for (var i = 0; i<items.length; i++) { %>
@@ -113,7 +113,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
-                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
         </div>
 
         <div class="row">
-            <h1 class="rh">Rice & Biriyani</h1>
+            <h1 class="rhh">Rice & Biriyani</h1>
         </div>
         <div class="row">
             <% for (var i = 0; i<items.length; i++) { %>
@@ -133,7 +133,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
-                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
         </div>
 
         <div class="row">
-            <h1 class="rh">Fried Rice & Noodles</h1>
+            <h1 class="rhh">Fried Rice & Noodles</h1>
         </div>
         <div class="row">
             <% for (var i = 0; i<items.length; i++) { %>
@@ -153,7 +153,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
-                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
         </div>
         
         <div class="row">
-            <h1 class="rh">Pizzas & Pastas</h1>
+            <h1 class="rhh">Pizzas & Pastas</h1>
         </div>
         <div class="row">
             <% for (var i = 0; i<items.length; i++) { %>
@@ -173,7 +173,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
-                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
         </div>
 
         <div class="row">
-            <h1 class="rh">Desserts</h1>
+            <h1 class="rhh">Desserts</h1>
         </div>
         <div class="row">
             <% for (var i = 0; i<items.length; i++) { %>
@@ -193,7 +193,7 @@
                             <div class="card-body">
                             <h5 class="card-title rh"><%= items[i].title %></h5>
                             <p class="card-text"><%= items[i].description %></p>
-                            <a href="#" class="btn btn-add">Add to Cart</a>
+                            <button class="btn btn-add" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -203,6 +203,19 @@
 
     </div>
 
+    <!-- Cart -->
+    <div class="container">
+        <div class="row">
+            <div id="cart" class="cart">
+                <h1 class="rhh">Cart</h1>
+            </div>
+            <p>Total Price: ₹<span id="price">0</span></p>
+            
+        </div>
+    </div>
+    
+
+    <script src="/scripts/cart.js" async></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://kit.fontawesome.com/b6a0edf9cb.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

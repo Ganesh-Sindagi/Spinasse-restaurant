@@ -7,6 +7,7 @@ const port = 3000
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static("public"));
+app.use(express.json());
 
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
@@ -71,7 +72,24 @@ app.post("/login", (req, res) => {
   });
 })
 
+var cart_items = [];
+var cart_item_details = [];
+app.post("/cart", (req, res) => {
+  cart_items = req.body.cart;
+  
+  cart_items.map((cart_item) => {
+    connection.query('SELECT * FROM menu WHERE item_id = ?', [cart_item], function (error, results) {
+      if (!error){
+        cart_item_details.push(results[0]);
+      } else {
+        console.log(error)
+      }
+    });
+  });
 
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify({ data: foundMovies }));
+});
 
 app.listen(port, () => {
   console.log(`Spinasse listening at http://localhost:${port}`)

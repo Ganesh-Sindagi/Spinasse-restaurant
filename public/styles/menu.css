@@ -49,8 +49,12 @@
 }
 
 .rh {
-    margin-top: 2rem;
     color:#610094;
     font-weight: bold;
 }
 
+.rhh {
+    font-family: 'Lobster', cursive;
+    margin-top: 2rem;
+    color:#610094;
+}
