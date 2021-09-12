@@ -1,0 +1,25 @@
+.sticky-top {
+    background: white !important;
+}
+
+.btn-mh {
+    margin-left: 6rem !important;
+}
+
+.second {
+    margin-left: auto;
+    margin-right: 4rem ;
+}
+
+.fa-shopping-cart {
+    font-size: 2.2rem;
+}
+
+.ci{
+    background-color: #610094;
+    color: #fff;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    padding-left: 8px;
+}

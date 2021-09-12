@@ -35,7 +35,7 @@ app.post("/register", (req, res) => {
     if (error){
         console.log(error);
     } else {
-        // res.render('login')
+        res.render('login')
     }
 });
     
@@ -47,6 +47,9 @@ app.get("/login", (req, res) => {
   res.render("login");
 })
 
+var suid;
+var suname;
+
 app.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -57,7 +60,9 @@ app.post("/login", (req, res) => {
         console.log(error);
     } else {
         if(results[0].password === password) {
-            // res.render('studentdetails', {username: results[0].username, user_id: results[0].user_id})
+            suid = results[0].user_id;
+            suname = results[0].name;
+            res.render('menu', {username: suname, user_id: suid})
             console.log("success");
             console.log(results[0])
         } else {
@@ -67,6 +72,8 @@ app.post("/login", (req, res) => {
   });
 })
 
+
+
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`)
+  console.log(`Spinasse listening at http://localhost:${port}`)
 })
