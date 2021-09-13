@@ -49,7 +49,7 @@
             </div>
             <!-- <p>Total Price: ₹<span id="price">0</span></p> -->
         </div>
-
+        <% var total_price = 0 %>
         <div class="row">
             <table class="table table-hover">
                 <thead>
@@ -65,17 +65,20 @@
                         <tr>
                             <th scope="row"><img src="<%= items[i].img %>" class="cart-img" /></th>
                             <td><%= items[i].title %></td>
-                            <td><input class="cart-quantity-input" type="number" value="1"></td>
-                            <td><%= items[i].price %></td>
+                            <td><input id="quantity" class="cart-quantity-input cinp" type="number" value="1" name="quantity" onchange="updatePrice(this.value);"/></td>
+                            <td>₹<span id="item-price"><%= items[i].price %></span></td>
+                            <% total_price = total_price + items[i].price %>
                         </tr>
                     <% } %>
                 </tbody>
               </table>
+
+              <p class="price">Total Price: ₹<span class="price" id="price"><%= total_price %></span></p>
         </div>
     </div>
     
 
-    <script src="/scripts/cart.js" async></script>
+    <script src="/scripts/checkout.js" async></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://kit.fontawesome.com/b6a0edf9cb.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

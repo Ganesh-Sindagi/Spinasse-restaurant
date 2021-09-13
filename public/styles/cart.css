@@ -15,4 +15,11 @@
 
 .cart-quantity-input {
     width: 40px;
+    border-radius: 15%;
+    border-color: #72147E ;
+}
+
+.price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
 }
