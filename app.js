@@ -129,18 +129,20 @@ app.post("/adminlogin", (req, res) => {
 const email = req.body.email;
 const password = req.body.password;
 
-connection.query('SELECT admin_id, password, name FROM user WHERE email = ?',[email], function (error, results) {
+connection.query('SELECT admin_id, password, name FROM admin WHERE email = ?',[email], function (error, results) {
   if (error){
       res.send("<h1>No User exist</h1>")
       console.log(error);
   } else {
       if(results[0].password === password) {
-          res.render('admin');
+        connection.query('SELECT * FROM orders', function (error, results) {
+          res.render('admin', {orders: results});
+        });  
       } else {
           console.log("password didn't match")
       }
-  }
-});
+    }
+  });
 })
 
 app.listen(port, () => {
