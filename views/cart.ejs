@@ -51,6 +51,7 @@
         </div>
         <% var total_price = 0 %>
         <div class="row">
+          <form action="/checkout" method="POST"> 
             <table class="table table-hover">
                 <thead>
                   <tr>
@@ -61,19 +62,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <% for (var i = 0; i <items.length; i++) { %>
-                        <tr>
-                            <th scope="row"><img src="<%= items[i].img %>" class="cart-img" /></th>
-                            <td><%= items[i].title %></td>
-                            <td><input id="quantity" class="cart-quantity-input cinp" type="number" value="1" name="quantity" onchange="updatePrice(this.value);"/></td>
-                            <td>₹<span id="item-price"><%= items[i].price %></span></td>
-                            <% total_price = total_price + items[i].price %>
-                        </tr>
-                    <% } %>
+                  <% for (var i = 0; i <items.length; i++) { %>
+                      <tr>
+                          <th scope="row"><img src="<%= items[i].img %>" class="cart-img" /></th>
+                          <td><%= items[i].title %></td>
+                          <td><input id="quantity" class="cart-quantity-input cinp" type="number" value="1" name="quantity" onchange="updatePrice(this.value);"/></td>
+                          <td>₹<span id="item-price" name="price"><%= items[i].price %></span></td>
+                          <input type="hidden" name="item_id" value="<%= items[i].item_id %>" />
+                          <input type="hidden" name="price" value="<%= items[i].price %>" />
+                          <% total_price = total_price + items[i].price %>
+                      </tr>
+                  <% } %>
                 </tbody>
-              </table>
+            </table>
 
-              <p class="price">Total Price: ₹<span class="price" id="price"><%= total_price %></span></p>
+            <p class="price">Total Price: ₹<span class="price" id="price"><%= total_price %></span></p>
+            <button type="submit" class="btn btn-mh">Checkout</button>
+          </form>
         </div>
     </div>
     

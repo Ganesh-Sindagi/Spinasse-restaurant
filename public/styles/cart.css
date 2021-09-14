@@ -23,3 +23,12 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
 }
+
+.btn-mh {
+    margin-top: 0rem !important;
+    margin-left: 0rem !important;
+}
+
+.container {
+    margin-bottom: 2rem !important;
+}

@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const ejs = require("ejs");
 const port = 3000
+const { v4: uuidv4 } = require('uuid');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -78,28 +79,13 @@ function getItemDetails(citems) {
   
   citems.map((item) => {
     connection.query('SELECT * FROM menu WHERE item_id = ?',[item], function (error, results2) {
-      // console.log("Query Result", results2[0]);
       citemdetails.push(results2[0]);
     });
   })
-
-  // console.log("Print function in array" ,citems);
-  // return citemdetails;
 }
 
 
 app.get("/cart", (req, res) => {
-  // connection.query('SELECT * FROM cart WHERE user_id = ?',[suid], function (error, results) {
-  //   if (!error){
-  //       results.map((result) => {
-  //         // console.log(result)
-  //         citems.push(result.item); 
-  //       });   
-  //   }
-  //   // console.log("Items Array results",citems);
-    
-  // });
-  // console.log("Details Array results",citemdetails);
   res.render('cart', {username: suname, user_id: suid, items: citemdetails}) 
 });
 
@@ -107,17 +93,25 @@ var cart_items = [];
 
 app.post("/cart", (req, res) => {
   cart_items = req.body.cart;
-  // cart_items.map((cart_item) => {
-  //   connection.query('INSERT INTO cart (user_id, item) VALUES (?, ?)', [suid, cart_item], function (error, results) {
-  //     if (!error){
-  //       // console.log("sucess")
-  //     } else {
-  //       console.log(error)
-  //     }
-  //   });
-  // });
   getItemDetails(cart_items);
 });
+
+app.post("/checkout", (req, res) => {
+  const item_id = req.body.item_id;
+  const quantity = req.body.quantity;
+  const price = req.body.price;
+  var d = new Date();
+
+  item_id.map((item, i) => {
+    connection.query('INSERT INTO orders (order_id, user_id, item_id, price, time) VALUES (?, ?, ?, ?, ?)', [uuidv4(), suid, item, price[i], d], function (error, results, fields) {
+      if (error){
+          console.log(error);
+      } else {
+          res.render('confirmation')
+      }
+    });
+  });
+})
 
 app.listen(port, () => {
   console.log(`Spinasse listening at http://localhost:${port}`)
