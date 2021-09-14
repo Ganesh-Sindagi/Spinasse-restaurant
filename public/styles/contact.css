@@ -1,0 +1,17 @@
+.add {
+    color: #72147E !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 6rem;
+    margin-top: 13rem;
+}
+
+.tel {
+    color: #72147E !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 6rem;
+    margin-top: 18rem;
+}

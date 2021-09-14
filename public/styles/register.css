@@ -67,3 +67,10 @@ body {
 .reg-card {
     height: 32rem;
 }
+
+#admin-btn {
+    margin-left: 2rem !important;
+    margin-top: 1.4rem !important;
+    color:white;
+    font-size: 1rem;
+}

@@ -113,6 +113,36 @@ app.post("/checkout", (req, res) => {
   });
 })
 
+app.get("/about", (req, res) => {
+  res.render('about');
+});
+
+app.get("/contact", (req, res) => {
+  res.render('contact');
+});
+
+app.get("/adminlogin", (req, res) => {
+  res.render('adminlogin')
+})
+
+app.post("/adminlogin", (req, res) => {
+const email = req.body.email;
+const password = req.body.password;
+
+connection.query('SELECT admin_id, password, name FROM user WHERE email = ?',[email], function (error, results) {
+  if (error){
+      res.send("<h1>No User exist</h1>")
+      console.log(error);
+  } else {
+      if(results[0].password === password) {
+          res.render('admin');
+      } else {
+          console.log("password didn't match")
+      }
+  }
+});
+})
+
 app.listen(port, () => {
   console.log(`Spinasse listening at http://localhost:${port}`)
 })
