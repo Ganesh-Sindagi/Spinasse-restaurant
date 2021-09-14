@@ -1,0 +1,9 @@
+.about {
+    width: 25rem;
+    margin-left: 6rem;
+    margin-top: 15rem;
+    position: absolute;
+    display: flex;
+    text-align: justify;
+    font-size: 1.2rem;
+}

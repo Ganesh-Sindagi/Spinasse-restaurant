@@ -84,7 +84,6 @@ function getItemDetails(citems) {
   })
 }
 
-
 app.get("/cart", (req, res) => {
   res.render('cart', {username: suname, user_id: suid, items: citemdetails}) 
 });
@@ -107,10 +106,11 @@ app.post("/checkout", (req, res) => {
       if (error){
           console.log(error);
       } else {
-          res.render('confirmation')
       }
     });
   });
+
+  res.render('confirmation')
 })
 
 app.get("/about", (req, res) => {
